@@ -22,7 +22,7 @@ export default function Contact() {
     e.preventDefault();
        
 
-    const whatsappNumber = "919207321384"; // Replace with your WhatsApp number
+    const whatsappNumber = "919567185249"; // Replace with your WhatsApp number
     // Format the message with form data
     const message = `Hello! I would like to contact you.
       \nName: ${formData.name}
