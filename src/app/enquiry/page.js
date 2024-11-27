@@ -43,7 +43,7 @@ export default function Enquiry() {
     
   
     // Define the WhatsApp number (include country code, no spaces or special characters)
-    const whatsappNumber = "919207321384"; // Replace with the actual WhatsApp number
+    const whatsappNumber = "919567185249"; // Replace with the actual WhatsApp number
   
     // Format the message with form data
     const message = `Hello! I would like to plan a trip.
