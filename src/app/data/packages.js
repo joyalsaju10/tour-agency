@@ -25,7 +25,7 @@ export const packageData = [
       description: 'The southernmost tip of India, where the sun rises and sets over the ocean.',
   },
   {
-      imageUrl: '/images/vagamon.jpg',
+      imageUrl: '/images/Vagamon.jpg',
       title: 'Vagamon',
       description: 'Vagamon, where the winds whisper tales of tranquility and the lush landscapes take you to a world beyond.',
   },
@@ -39,7 +39,7 @@ export const packageData = [
       description: 'Wayanad is where adventure and tranquility dance in the lap of nature, waiting for you to explore.',
   },
   {
-      imageUrl: '/images/athirappilly.jpg',
+      imageUrl: '/images/Athirappilly.jpg',
       title: 'Athirappilly',
       description: 'Athirappilly, the ‘Niagara of India,’ where the power of the waterfall meets the serenity of nature.',
   },
