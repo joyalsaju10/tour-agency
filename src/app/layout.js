@@ -1,5 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Head from "next/head";
+
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -12,19 +15,25 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+// layout.js
+
 export const metadata = {
-  title: "Tour Package",
-  description: "This app helps to find your best packages to make you happy",
+  title: "Royal Odyssey | Explore Amazing Tours",
+  description: "Discover stunning destinations and exciting tour packages to start your adventure today!",
+  keywords: "travel, tours, adventure, holidays, vacation packages",
+  
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <head>
+        <Head>
+          <link rel="icon" href="/skull.ico" />
+        </Head>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
+
