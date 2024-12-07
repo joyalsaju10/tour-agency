@@ -1,26 +1,23 @@
 
+import Head from 'next/head';
 import Image from 'next/image';
 import Navbar from './components/navBar';
 import PanoramaSlider from './components/home/gallery';
-import RootLayout from './layout';
 
 export default function Home() {
   return (
     <div className="bg-slate-800">
+      
       <main className="min-h-screen">
         {/* Background Image Section */}
         <div
           className="relative bg-cover bg-center bg-no-repeat home-background"
           style={{
             backgroundImage: `url('/images/bg-main.jpg')`,
-            height: "500px", // Default height for the background
-
+            height: "500px",
           }}
         >
-          {/* Overlay for Color Blend */}
           <div className="absolute inset-0 bg-slate-800 bg-opacity-50"></div>
-
-          {/* Text on top of the background */}
           <div className="absolute inset-0 flex items-center justify-center px-4">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-extrabold text-white">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-cyan-500">
@@ -28,13 +25,11 @@ export default function Home() {
               </span>
             </h1>
           </div>
-
-          {/* Navbar Component */}
           <Navbar />
         </div>
 
         {/* Content Section */}
-        <div className="pt-12 pb-10 ">
+        <div className="pt-12 pb-10">
           <PanoramaSlider />
         </div>
 
