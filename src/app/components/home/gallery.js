@@ -21,6 +21,16 @@ export default function PanoramaSlider() {
   };
 
   return (
+    <div className="relative py-12 bg-slate-800 text-gray-800">
+      {/* Heading Section */}
+      <div className="text-center mb-8">
+        <h2 className="text-4xl font-bold text-white mb-4">
+          Popular Destinations
+        </h2>
+        <p className="text-lg italic text-white">
+          We're gonna make your dreams come true
+        </p>
+      </div>
     <div className="relative">
       {/* Main Swiper Slider */}
       <Swiper
@@ -29,7 +39,7 @@ export default function PanoramaSlider() {
         centeredSlides={true}
         slidesPerView={2}  
         spaceBetween={5}  
-        initialSlide={3}
+        initialSlide={4}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -111,6 +121,7 @@ export default function PanoramaSlider() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
