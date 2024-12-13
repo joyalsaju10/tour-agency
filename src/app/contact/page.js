@@ -22,7 +22,7 @@ export default function Contact() {
     e.preventDefault();
        
 
-    const whatsappNumber = "919567185249"; // Replace with your WhatsApp number
+    const whatsappNumber = "917907851594"; // Replace with your WhatsApp number
     // Format the message with form data
     const message = `Hello! I would like to contact you.
       \nName: ${formData.name}
@@ -46,6 +46,16 @@ export default function Contact() {
 
         <h1 className="text-5xl font-extrabold font-serif mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mt-20">Contact Us</h1>
 
+{/* Contact Section */}
+<div className="text-center w-full py-12">
+              <h3 className="text-xl md:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                Get in Touch
+              </h3>
+              <p className="mt-4 text-sm md:text-base text-lg italic text-gray-300">
+                We’re here to assist you. Whether you have questions, need support, or simply want to say hello, feel free to reach out to us. 
+                We’ll respond promptly!
+              </p>
+              </div>
         {/* Contact Form */}
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6 bg-transparent p-6 rounded-lg shadow-lg">
           {/* Name */}
@@ -128,17 +138,29 @@ export default function Contact() {
           {/* Contact Us (Phone) */}
           <div className="mb-4">
             <p className="text-lg">Call Us</p>
+            <div className="flex flex-wrap justify-center space-x-4">
             <a
-              href="tel:+919567185249"
-              className="text-green-600 hover:text-green-800"
-            >
-              +919567185249
-              +918547493116
-              +918075163779
-            </a>
+      href="tel:+919567185249"
+      className=" text-green-600 hover:text-green-800 "
+    >
+      +91 95671 85249
+    </a>
+    <a
+      href="tel:+918547493116"
+      className="text-green-600 hover:text-green-800 "
+    >
+      +91 85474 93116
+    </a>
+    <a
+      href="tel:+918075163779"
+      className=" text-green-600 hover:text-green-800 "
+    >
+      +91 80751 63779
+    </a>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
