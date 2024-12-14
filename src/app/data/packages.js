@@ -96,10 +96,11 @@ export const packageData = [
 
   },
   {
-      imageUrl: '/images/kovalam.jpg',
-      title: 'Kovalam',
-      description: 'A stunning beach destination known for its crescent-shaped shores and vibrant atmosphere.',
-      additionalImages: [{
+      imageUrl: '/images/Thiruvananthapuram.jpg',
+      title: 'Thiruvananthapuram',
+      description: "Thiruvananthapuram is the capital of the southern Indian state of Kerala...",
+      additionalImages: [
+         {
         url: "/images/Kovalam-1.jpg",
         title: "Vizhinjam Light House",
         description: "Offering stunning views of the coastline, this lighthouse is a historical landmark and a great spot for photography.  ",
@@ -205,7 +206,7 @@ export const packageData = [
           description: "A thrilling glass-bottom bridge offering breathtaking views of Vagamon's lush greenery.",
         },
         {
-          url: "/images/Murugan Hill.jpeg",
+          url: "/images/Murugan Hill.jpg",
           title: "Murugan Hill",
           description: "A serene hilltop featuring a temple dedicated to Lord Murugan, surrounded by tranquil landscapes.",
         },

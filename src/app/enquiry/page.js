@@ -9,90 +9,77 @@ import Navbar from '../components/navBar';
 
 export default function Enquiry() {
   const [formData, setFormData] = useState({
-    name:"",
-    contactNo:"",
-    email:"",
+    name: "",
+    contactNo: "",
+    email: "",
     startDate: "",
     endDate: "",
-    adults: "", 
+    adults: "",
     children: "",
-    place: "",
+    places: [],
   });
-  const [selectedPlace, setSelectedPlace] = useState("Choose your destination");
-  const options = ["Munnar","Wayanad", "KanyaKumari", "FortKochi" ,"Athirapilly","Kovalam","Alleppey","Vagamon",]
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const options = ["Munnar", "Wayanad", "KanyaKumari", "FortKochi", "Athirapilly","Kovalam", "Thekkady", "Alleppey", "Vagamon","Sabarimala"];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
-     const handlePlaceSelect = (place) => {
-    setSelectedPlace(place); // Update the dropdown label
+  const handlePlaceToggle = (place) => {
+    const newPlaces = formData.places.includes(place)
+      ? formData.places.filter((item) => item !== place)
+      : [...formData.places, place];
+
     setFormData((prevData) => ({
       ...prevData,
-      place, // Update place in form data
+      places: newPlaces,
     }));
   };
 
-   // Define handleSubmit function
-    const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    
-  
-    // Define the WhatsApp number (include country code, no spaces or special characters)
-    const whatsappNumber = "919567185249"; // Replace with the actual WhatsApp number
-  
-    // Format the message with form data
+
+    const whatsappNumber = "917907851594";
     const message = `Hello! I would like to plan a trip.
-      \nname: ${formData.name}
-      \ncontact No: ${formData.contactNo}
-      \nemail: ${formData.email}
+      \nName: ${formData.name}
+      \nContact No: ${formData.contactNo}
+      \nEmail: ${formData.email}
       \nStart Date: ${formData.startDate}
       \nEnd Date: ${formData.endDate}
-      \nadults: ${formData.adults}
-      \nchildren: ${formData.children}
-      \nPlace: ${formData.place}
+      \nAdults: ${formData.adults}
+      \nChildren: ${formData.children}
+      \nPlaces: ${formData.places.join(", ")}
       
       Looking forward to your assistance. Thank you!
     `.trim();
- 
-    // URL encode the message
+
     const encodedMessage = encodeURIComponent(message);
-    
-   // Create WhatsApp link
-   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     console.log(whatsappLink);
-
-    // Redirect to WhatsApp
     window.open(whatsappLink, "_blank");
   };
-  
 
   return (
     <div className="relative min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/bg-1.jpg')" }}>
       <div className="absolute inset-0 bg-black opacity-65"></div>
       <div className="relative z-10 p-4 sm:p-9 text-white">
-
-        {/* Navbar with Home button */}
         <Navbar />
 
         <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold font-serif mb-6 mt-20 text-center bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
           PLAN WITH US
         </h1>
-  
-        {/* Form Container */}
+        <p className="text-lg italic text-center mb-5">"Travel is the only thing you buy that makes you richer."</p>
+
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-lg sm:max-w-xl md:max-w-3xl mx-auto">
-          {/* Left Side (Name, Contact Number, Email, Dropdown) */}
-          <div className="space-y-4 ">
-            
-           {/* Name */}
-           <div>
+          <div className="space-y-4">
+            {/* Name */}
+            <div>
               <label className="block mb-2 text-sm font-medium text-white" htmlFor="name">
-              Name
+                Name
               </label>
               <input
                 type="text"
@@ -100,70 +87,84 @@ export default function Enquiry() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="block w-full  border border-gray-300 p-2 rounded-lg focus:bg-transparent bg-transparent text-white"
+                className="block w-full border border-gray-300 p-2 rounded-lg bg-transparent text-white"
                 placeholder="Enter your name"
                 required
               />
             </div>
-  
-            {/* Contact Number */}
 
+            {/* Contact Number */}
             <div>
-            <label className="block mb-2 text-sm font-medium text-white" htmlFor="contactNo">
-              Contact Number  
-                </label>
+              <label className="block mb-2 text-sm font-medium text-white" htmlFor="contactNo">
+                Contact Number
+              </label>
               <input
                 type="tel"
                 id="contactNo"
                 name="contactNo"
                 value={formData.contactNo}
                 onChange={handleChange}
-                className="block w-full  border border-gray-300 p-2 rounded-lg bg-transparent text-white"
+                className="block w-full border border-gray-300 p-2 rounded-lg bg-transparent text-white"
                 placeholder="Enter your contact number"
                 required
               />
             </div>
-  
+
             {/* Email */}
             <div>
-            <label className="block mb-2 text-sm font-medium text-white" htmlFor="email">
-               Email 
-                </label>
+              <label className="block mb-2 text-sm font-medium text-white" htmlFor="email">
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="block w-full border border-gray-300 p-2 rounded-lg   bg-transparent text-white"
+                className="block w-full border border-gray-300 p-2 rounded-lg bg-transparent text-white"
                 placeholder="Enter your email"
                 required
               />
             </div>
-  
-            {/* Choose Your Destination Dropdown */}
-            <div className="relative z-50  p-1 pt-4 space-y-4">
-              <Dropdown label={selectedPlace} className="w-full">
-                {options.map((option, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    onClick={() => handlePlaceSelect(option)}
-                    className="bg-white  text-black hover:bg-gray-300"
-                  >
-                    {option}
-                  </Dropdown.Item>
-                ))}
-              </Dropdown>
+
+            {/* Dropdown */}
+            <div>
+              <label className="block mb-2 text-sm font-medium text-white">Choose Your Destinations</label>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="block w-full text-left border border-gray-300 p-2 rounded-lg bg-transparent text-white"
+                >
+                  {formData.places.length > 0 ? formData.places.join(", ") : "Select destinations"}
+                </button>
+
+                {dropdownOpen && (
+                  <ul className="absolute z-50 mt-1 w-full max-h-60 overflow-y-auto bg-white shadow-lg rounded-lg text-black">
+                    {options.map((option, index) => (
+                      <li key={index}>
+                        <label className="flex items-center px-4 py-2 cursor-pointer hover:bg-transparent">
+                          <input
+                            type="checkbox"
+                            className="mr-2"
+                            checked={formData.places.includes(option)}
+                            onChange={() => handlePlaceToggle(option)}
+                          />
+                          {option}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
           </div>
-  
+
           {/* Right Side (Start Date, End Date, Adults, Children) */}
           <div className="space-y-4">
             {/* Start Date */}
             <div>
-              <label className="block mb-2 text-sm font-medium text-white" htmlFor="startDate">
-                Start Date
-              </label>
+              <label className="block mb-2 text-sm font-medium text-white" htmlFor="startDate">Start Date</label>
               <input
                 type="date"
                 id="startDate"
@@ -174,12 +175,10 @@ export default function Enquiry() {
                 placeholder="Select start date"
               />
             </div>
-  
+
             {/* End Date */}
             <div>
-              <label className="block mb-2 text-sm font-medium text-white" htmlFor="endDate">
-                End Date
-              </label>
+              <label className="block mb-2 text-sm font-medium text-white" htmlFor="endDate">End Date</label>
               <input
                 type="date"
                 id="endDate"
@@ -190,12 +189,10 @@ export default function Enquiry() {
                 placeholder="Select end date"
               />
             </div>
-  
+
             {/* Adults */}
             <div>
-              <label className="block mb-1 text-sm font-medium text-white" htmlFor="adults">
-                Adults
-              </label>
+              <label className="block mb-1 text-sm font-medium text-white" htmlFor="adults">Adults</label>
               <input
                 type="number"
                 id="adults"
@@ -204,16 +201,14 @@ export default function Enquiry() {
                 onChange={handleChange}
                 className="block w-full border border-gray-300 p-2 rounded-lg bg-transparent text-white"
                 min="1"
-                placeholder=" Number of adults"
+                placeholder="Number of adults"
                 required
               />
             </div>
-  
+
             {/* Children */}
             <div>
-              <label className="block mb-2 text-sm font-medium text-white" htmlFor="children">
-                Children
-              </label>
+              <label className="block mb-2 text-sm font-medium text-white" htmlFor="children">Children</label>
               <input
                 type="number"
                 id="children"
@@ -226,7 +221,7 @@ export default function Enquiry() {
               />
             </div>
           </div>
-  
+
           {/* Submit Button */}
           <div className="col-span-1 md:col-span-2 text-center mt-4">
             <button
