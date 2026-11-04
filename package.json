@@ -11,11 +11,11 @@
   "dependencies": {
     "flowbite": "^2.5.2",
     "flowbite-react": "^0.10.2",
-    "next": "15.0.1",
-    "react": "18.3.1",
+    "next": "15.5.28",
+    "react": "19.3.1",
     "react-autosuggest": "^10.1.0",
     "react-date-range": "^2.0.1",
-    "react-dom": "18.3.1",
+    "react-dom": "19.3.1",
     "react-select": "^5.8.3",
     "swiper": "^11.1.15"
   },
