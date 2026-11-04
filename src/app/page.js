@@ -365,8 +365,8 @@ export default function Home() {
             {/* Contact Information */}
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
-              <p className="text-sm">Email: tss288745@gmail.com</p>
-              <p className="text-sm">Phone: +917907851594 </p>
+              <p className="text-sm">Email: info.royalodyssey@gmail.com</p>
+              <p className="text-sm">Phone: +918590110620 </p>
               <p className="text-sm">Address: Kerala, India</p>
             </div>
 
@@ -375,13 +375,13 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://www.facebook.com/share/17LzjA3XeF/"
+                  href="https://www.facebook.com/share/1DZcQZdYUu/"
                   className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-gray-700 transition"
                 >
                   <img src="/icons/facebook.svg" alt="Facebook" className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://wa.me/917907851594"
+                  href="https://wa.me/918590110620"
                   className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-gray-700 transition"
                 >
                   <img src="/icons/whatsapp.svg" alt="Twitter" className="w-5 h-5" />

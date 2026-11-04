@@ -43,7 +43,7 @@ export default function Enquiry() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const whatsappNumber = "917907851594";
+    const whatsappNumber = "918590110620";
     const message = `Hello! I would like to plan a trip.
       \nName: ${formData.name}
       \nContact No: ${formData.contactNo}

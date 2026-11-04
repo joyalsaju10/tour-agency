@@ -131,7 +131,7 @@ export default function Contact() {
               href="mailto:contact@yourdomain.com"
               className="text-green-600 hover:text-green-800"
             >
-              tss288745@gmail.com
+              info.royalodyssey@gmail.com
             </a>
           </div>
 
@@ -139,23 +139,12 @@ export default function Contact() {
           <div className="mb-4">
             <p className="text-lg">Call Us</p>
             <div className="flex flex-wrap justify-center space-x-4">
-            <a
-      href="tel:+919567185249"
+            
+    <a
+      href="tel:+918590110620"
       className=" text-green-600 hover:text-green-800 "
     >
-      +91 95671 85249
-    </a>
-    <a
-      href="tel:+918547493116"
-      className="text-green-600 hover:text-green-800 "
-    >
-      +91 85474 93116
-    </a>
-    <a
-      href="tel:+918075163779"
-      className=" text-green-600 hover:text-green-800 "
-    >
-      +91 80751 63779
+      +91 85901 10620
     </a>
           </div>
         </div>
